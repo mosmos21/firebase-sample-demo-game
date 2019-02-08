@@ -1,5 +1,5 @@
 'use strict';
-import { DB } from '../main.js';
+import cloudStorage from './cloud_storage.js';
 
 const swit = (VAL, ME) => {
     const YOU = (ME === 'p1') ? 'p2' : 'p1';
@@ -20,12 +20,11 @@ const swit = (VAL, ME) => {
         document.querySelector('#console').style.color = (VAL['turn'] === ME) ? 'blue' : 'red';
     }
     // button down -> update DB
-    document.querySelector('#btn').addEventListener('pointerdown', e => {
+    document.querySelector('#btn').addEventListener('click', e => {
         if (ME === VAL['turn'] && (VAL['p1'] < VAL['p2'])) {
-            // console.log(progress, VAL['turn'], ME, pos, ':', YOU, VAL[YOU]);
             VAL[ME] = pos;
             VAL['turn'] = YOU;
-            DB.data.set(JSON.stringify(VAL));
+            cloudStorage.setGameData(VAL);
         }
     });
 };
