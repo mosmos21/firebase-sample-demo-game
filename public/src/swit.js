@@ -1,7 +1,5 @@
 'use strict';
-import {
-    DB
-} from '../main.js';
+import { DB } from '../main.js';
 
 const swit = (VAL, ME) => {
     const YOU = (ME === 'p1') ? 'p2' : 'p1';
@@ -31,6 +29,4 @@ const swit = (VAL, ME) => {
         }
     });
 };
-export {
-    swit
-};
+export default swit;

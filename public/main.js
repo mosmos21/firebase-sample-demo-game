@@ -1,11 +1,7 @@
 'use strict';
 
-import {
-    init
-} from '/src/init.js';
-import {
-    swit
-} from './src/swit.js';
+import init from '/src/init.js';
+import swit from './src/swit.js';
 // firebase initialize
 const config = {
     apiKey: "AIzaSyBstMUcizSkipYd8tEIcfNpaUL1Y5ZQ_eg",

@@ -1,7 +1,5 @@
 'use strict';
-import {
-    DB
-} from '../main.js';
+import { DB } from '../main.js';
 
 const init = () => {
     return new Promise(res => {
@@ -40,6 +38,4 @@ const initializeData = () => {
     return JSON.stringify(dat);
 };
 
-export {
-    init
-};
+export default init;
