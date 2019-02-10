@@ -5,8 +5,7 @@ import board from './board.js';
 const init = () => {
   return new Promise(res => {
     board.setConsoleMessage('Connecting...');
-    cloudStorage.getTicketOnce().then(e => {
-      const val = e.val();
+    cloudStorage.getTicketOnceThen(val => {
       const UID = localStorage.getItem('UID');
       if (val == null) { // first: p1
         cloudStorage.removeAll();

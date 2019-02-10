@@ -15,7 +15,7 @@ const ticket = firebase.database().ref('samplegame/ticket');
 const gameData = firebase.database().ref('samplegame/data');
 
 export default {
-  getTicketOnce: () => ticket.once('value'),
+  getTicketOnceThen: func => ticket.once('value').then(e => func(e.val())),
   setTicket: uid => ticket.set([Date.parse(new Date(), uid)]),
   setGameData: data => gameData.set(JSON.stringify(data)),
   removeAll: () => sampleGame.remove(),
